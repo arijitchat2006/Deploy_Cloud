@@ -16,10 +16,10 @@ before_install:
   # - gcloud config set compute/zone asia-south1-a
   # - gcloud container clusters get-credentials multi-cluster
   # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t arijitchat2006/Deploy_Cloud -f ./client/Dockerfile.dev ./client
+  - docker build -t arijitchat2006/deploycloud -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run arijitchat2006/Deploy_Cloud npm test -- --coverage
+  - docker run arijitchat2006/deploycloud npm test -- --coverage
 
 deploy:
   provider: script
