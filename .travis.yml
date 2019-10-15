@@ -11,8 +11,9 @@ before_install:
   # - curl https://sdk.cloud.google.com | bash > /dev/null;
   - curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip | bash > /dev/null;
   - unzip awscli-bundle.zip
+  - ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
   # - source $HOME/google-cloud-sdk/path.bash.inc
-  - source $HOME/awscli-bundle/path.bash.inc
+  #- source $HOME/awscli-bundle/path.bash.inc
   # - gcloud components update kubectl
   - aws components update kubectl
   # - gcloud auth activate-service-account --key-file service-account.json
