@@ -33,7 +33,7 @@ before_install:
   - export AWS_ACCESS_KEY_ID=AKIAI6RCCVOEP523WDWQ
   - export AWS_SECRET_ACCESS_KEY=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
   - aws configure set region us-west-2
-  - aws eks --region us-west-2 update-kubeconfig --name arijitcluster --role-arn "arn:aws:iam::585830484885:role/arijitiam"
+  - aws eks --region us-west-2 update-kubeconfig --name $AWS_CLUSTER --role-arn "arn:aws:iam::585830484885:role/arijitiam"
   - aws configure set project multi-k8s-255813
   - aws get-cluster-credentials arijitcluster
   # - gcloud container clusters get-credentials multi-cluster
