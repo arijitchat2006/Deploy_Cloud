@@ -33,9 +33,9 @@ before_install:
   - export AWS_ACCESS_KEY_ID=AKIAJOQWZ7KT4TDQFYZQ
   - export AWS_SECRET_ACCESS_KEY=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
   - aws configure set region us-west-2
-  - aws eks --region us-west-2 update-kubeconfig --name $AWS_CLUSTER --role-arn "arn:aws:iam::585830484885:role/arijitiam"
+  - aws eks --region us-west-2 update-kubeconfig --name $AWS_CLUSTER --role-arn $ROLE_ARN
   - aws configure set project multi-k8s-255813
-  - aws get-cluster-credentials arijitcluster
+  - aws get-cluster-credentials $AWS_CLUSTER
   # - gcloud container clusters get-credentials multi-cluster
   #- aws container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
