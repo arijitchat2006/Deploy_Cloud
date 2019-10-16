@@ -30,6 +30,8 @@ before_install:
   # - gcloud config set project multi-k8s-255813
   #- aws config set project multi-k8s-255813
   # - gcloud config set compute/zone asia-south1-a
+  - export AWS_ACCESS_KEY_ID=AKIAI6RCCVOEP523WDWQ
+  - export AWS_SECRET_ACCESS_KEY=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
   - aws configure set region us-west-2
   - aws eks --region us-west-2 update-kubeconfig --name arijitcluster
   - aws configure set project multi-k8s-255813
