@@ -30,7 +30,10 @@ before_install:
   # - gcloud config set project multi-k8s-255813
   #- aws config set project multi-k8s-255813
   # - gcloud config set compute/zone asia-south1-a
-  - aws configure set region eu-west-2
+  - aws configure set region us-west-2
+  - aws eks --region us-west-2 update-kubeconfig --name arijitcluster
+  - aws configure set project multi-k8s-255813
+  - aws get-cluster-credentials arijitcluster
   # - gcloud container clusters get-credentials multi-cluster
   #- aws container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
